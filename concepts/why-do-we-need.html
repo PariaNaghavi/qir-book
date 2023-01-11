@@ -109,15 +109,37 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/qir-gen-qsharp/qsharp-magic.html">
-   QIR with Q#
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/qir-emission.html">
+   QIR Generation
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/qir-python.html">
-   QIR with Python
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/qir-emission/qsharp/in_jupyter/qsharp-magic.html">
+     Q# ➡️ QIR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/qir-emission/qutip/qir-gen.html">
+     QuTip ➡️ QIR 🚧
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/qir-emission/qiskit/qir-gen.html">
+     Qiskit ➡️ QIR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/qir-emission/pennylane/qir-gen.html">
+     PennyLane ➡️ QIR 🚧
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/qat-optimization.html">
@@ -372,36 +394,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivations-for-qir-community-alliance">
-   Motivations for QIR Community/ Alliance?
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -413,19 +411,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivations-for-qir-community-alliance">
-   Motivations for QIR Community/ Alliance?
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -441,12 +426,6 @@ title="Print to PDF"
 <p>Hardware vender-designed compilers mostly support code generation mapped to the requirements of their own hardware. However, the QIR aims to provide means for hardware-agnostic workflow. It uses compiler profiling to define requirements of target machines. The generic QIR is lowered according to target profiles. Users can target multiple machines with one set of instructions, since the adaptations needed for each are abstracted out.</p>
 <p>The current limitations of noisy quantum devices have resulted in a strong <a class="reference external" href="https://arxiv.org/pdf/2207.06850.pdf">shift</a> towards hybrid approaches, utilizing classical (e.g., CPU, GPU, FPGA) and quantum hardware resources together to complete the computational model . The QIR is a hybrid compatible compiler. The LLVM backend of the ecosystem allows for compiler native classical control at the IR level, whereas most quantum compilers add classical support to a purely quantum compiler. The QIR ecosystem facilitates interoperability between languages and compiler libraries, thus transformations, analyzes, and optimizations. Withal, it supports interoperability for heterogeneous quantum-classical hardware architecture. This bridges the gap to place the QPU as an accelerator in HPC architectures.</p>
 <p>The QRAM, Quantum Random Access Memory, model was proposed to describe algorithms for integrated hardware, by <a class="reference external" href="https://www.osti.gov/servlets/purl/366453">E. Knill in 1996</a>. Back then, the phrase “hybrid algorithm” was not yet in use. However, the need was foreseen. Since then, the field has grown with numbers of designs and developments of quantum-classical algorithms. It is <a class="reference external" href="https://arxiv.org/pdf/2207.06850.pdf">considered</a> a hybrid algorithm if, to complete its abstract computational model, both classical and quantum processes are required. In other words, one cannot fully describe the computational model of a hybrid algorithm without referring to its classical computation.</p>
-<section id="motivations-for-qir-community-alliance">
-<h2>Motivations for QIR Community/ Alliance?<a class="headerlink" href="#motivations-for-qir-community-alliance" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><em>Interoperability</em> opens doors to cross-fields problem-solving</p></li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">

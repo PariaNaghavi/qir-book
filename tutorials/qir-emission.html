@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>QIR with Python</title>
+    <title>QIR Generation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Optimizing QIR with qat" href="qat-optimization.html" />
-    <link rel="prev" title="QIR Generation with Q# Using Magic Commands" href="qir-gen-qsharp/qsharp-magic.html" />
+    <link rel="next" title="Q# ➡️ QIR" href="qir-emission/qsharp/in_jupyter/qsharp-magic.html" />
+    <link rel="prev" title="Community Documentation" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,15 +109,37 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="qir-gen-qsharp/qsharp-magic.html">
-   QIR with Q#
-  </a>
- </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   QIR with Python
+   QIR Generation
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qir-emission/qsharp/in_jupyter/qsharp-magic.html">
+     Q# ➡️ QIR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qir-emission/qutip/qir-gen.html">
+     QuTip ➡️ QIR 🚧
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qir-emission/qiskit/qir-gen.html">
+     Qiskit ➡️ QIR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qir-emission/pennylane/qir-gen.html">
+     PennyLane ➡️ QIR 🚧
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="qat-optimization.html">
@@ -259,7 +281,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/qir-alliance/qir-book/main?urlpath=tree/qir-book/tutorials/qir-python.ipynb"
+        <a href="https://mybinder.org/v2/gh/qir-alliance/qir-book/main?urlpath=tree/qir-book/tutorials/qir-emission.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -319,7 +341,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/qir-alliance/qir-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/qir-python.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/qir-alliance/qir-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/qir-emission.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -336,7 +358,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/qir-alliance/qir-book/edit/main/qir-book/tutorials/qir-python.ipynb"
+        <a href="https://github.com/qir-alliance/qir-book/edit/main/qir-book/tutorials/qir-emission.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -364,7 +386,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/tutorials/qir-python.ipynb"
+        <a href="../_sources/tutorials/qir-emission.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -413,7 +435,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>QIR with Python</h1>
+                <h1>QIR Generation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -425,14 +447,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="qir-with-python">
-<h1>QIR with Python<a class="headerlink" href="#qir-with-python" title="Permalink to this headline">#</a></h1>
-<p><em>Tutorials are narrated examples of using QIR as a part of some workflow or with a particular set of tools.</em></p>
-<ul class="simple">
-<li><p>Directly generate QIR using PyQIR generator: <a class="reference external" href="https://github.com/qir-alliance/pyqir/tree/main/examples/generator#readme">https://github.com/qir-alliance/pyqir/tree/main/examples/generator#readme</a></p></li>
-<li><p>Parse QIR in Python: <a class="reference external" href="https://github.com/qir-alliance/pyqir/tree/main/pyqir-parser#readme">https://github.com/qir-alliance/pyqir/tree/main/pyqir-parser#readme</a></p></li>
-<li><p>Translating to QIR from other frameworks like cirq and qiskit with <code class="docutils literal notranslate"><span class="pre">qwop</span></code>: <a class="reference external" href="https://github.com/crazy4pi314/qwop">https://github.com/crazy4pi314/qwop</a></p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="qir-generation">
+<h1>QIR Generation<a class="headerlink" href="#qir-generation" title="Permalink to this headline">#</a></h1>
+<p>In this section, we will explore the generation of QIR from various front-ends such as Q#, QuTip, Cirq, and Qiskit. To demonstrate this process, we will use the example of teleporting the binary representation of “Hello World!” and emitting the QIR of the corresponding hybrid instruction. The teleportation protocol is heterogeneous, comprised both classical and quantum instructions. The interdependent conditionals following the measurement of the message and the auxiliary qubits in teleportation determine the next quantum gate operations on the target qubit.<br />
+From python-based frameworks we can utilize <a class="reference external" href="https://github.com/qir-alliance/pyqir">PyQIR</a> APIs to generate QIR.  In the case of Q#, there are two options available for emitting QIR: the use of the magic command within a Jupyter notebook, or the <a class="reference external" href="https://github.com/microsoft/qsharp-compiler/blob/main/examples/QIR/Emission/Emission.csproj">setting</a> the QIR XML tag in the C# project file.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,17 +482,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="qir-gen-qsharp/qsharp-magic.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">QIR Generation with Q# Using Magic Commands</p>
+            <p class="prev-next-title">Community Documentation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="qat-optimization.html" title="next page">
+    <a class='right-next' id="next-link" href="qir-emission/qsharp/in_jupyter/qsharp-magic.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Optimizing QIR with <code class="docutils literal notranslate"><span class="pre">qat</span></code></p>
+        <p class="prev-next-title">Q# ➡️ QIR</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
