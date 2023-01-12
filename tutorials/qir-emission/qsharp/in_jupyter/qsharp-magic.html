@@ -831,7 +831,7 @@ operation Greetings() : Unit {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre><code>; ModuleID = &#39;/tmp/tmpCwcJ5c.bc&#39;
+<div class="output text_html"><pre><code>; ModuleID = &#39;/tmp/tmpsiJrSW.bc&#39;
 
 %Tuple = type opaque
 %Array = type opaque
@@ -1147,10 +1147,10 @@ entry:
   store %Array* %0, %Array** %to_send, align 8
   call void @__quantum__rt__array_update_alias_count(%Array* %0, i32 1)
   %193 = call %Callable* @__quantum__rt__callable_create([4 x void (%Tuple*, %Tuple*, %Tuple*)*]* @SNIPPET__int2bool__FunctionTable, [2 x void (%Tuple*, i32)*]* null, %Tuple* null)
-  %msg = call %Array* @Microsoft__Quantum__Arrays___99fa682911e54b26aee754ad657af656_ForEach__body(%Callable* %193, %Array* %0)
+  %msg = call %Array* @Microsoft__Quantum__Arrays___db961af15f5647fca23132ce50fb5776_ForEach__body(%Callable* %193, %Array* %0)
   call void @__quantum__rt__array_update_alias_count(%Array* %msg, i32 1)
   %194 = call %Callable* @__quantum__rt__callable_create([4 x void (%Tuple*, %Tuple*, %Tuple*)*]* @SNIPPET__TeleportClassicalMessage__FunctionTable, [2 x void (%Tuple*, i32)*]* null, %Tuple* null)
-  %transferred = call %Array* @Microsoft__Quantum__Arrays___c110c9c36ec4465abc67c0e09fa39504_ForEach__body(%Callable* %194, %Array* %msg)
+  %transferred = call %Array* @Microsoft__Quantum__Arrays___5d69b4ce452e491cb25f5709d90fe980_ForEach__body(%Callable* %194, %Array* %msg)
   call void @__quantum__rt__array_update_alias_count(%Array* %transferred, i32 1)
   %195 = call i64 @__quantum__rt__array_get_size_1d(%Array* %transferred)
   %196 = sub i64 %195, 1
@@ -1402,7 +1402,26 @@ entry:
   ret void
 }
 
-define internal %Array* @Microsoft__Quantum__Arrays___99fa682911e54b26aee754ad657af656_ForEach__body(%Callable* %action, %Array* %array) {
+define internal %Result* @Microsoft__Quantum__Measurement__MResetZ__body(%Qubit* %target) {
+entry:
+  %result = call %Result* @Microsoft__Quantum__Intrinsic__M__body(%Qubit* %target)
+  %0 = call %Result* @__quantum__rt__result_get_one()
+  %1 = call i1 @__quantum__rt__result_equal(%Result* %result, %Result* %0)
+  br i1 %1, label %then0__1, label %continue__1
+
+then0__1:                                         ; preds = %entry
+  call void @__quantum__qis__x__body(%Qubit* %target)
+  br label %continue__1
+
+continue__1:                                      ; preds = %then0__1, %entry
+  ret %Result* %result
+}
+
+declare %Result* @__quantum__rt__result_get_one()
+
+declare i1 @__quantum__rt__result_equal(%Result*, %Result*)
+
+define internal %Array* @Microsoft__Quantum__Arrays___db961af15f5647fca23132ce50fb5776_ForEach__body(%Callable* %action, %Array* %array) {
 entry:
   %retval = alloca %Array*, align 8
   call void @__quantum__rt__capture_update_alias_count(%Callable* %action, i32 1)
@@ -1513,7 +1532,7 @@ declare void @__quantum__rt__callable_invoke(%Callable*, %Tuple*, %Tuple*)
 
 declare %Array* @__quantum__rt__array_copy(%Array*, i1)
 
-define internal %Array* @Microsoft__Quantum__Arrays___c110c9c36ec4465abc67c0e09fa39504_ForEach__body(%Callable* %action, %Array* %array) {
+define internal %Array* @Microsoft__Quantum__Arrays___5d69b4ce452e491cb25f5709d90fe980_ForEach__body(%Callable* %action, %Array* %array) {
 entry:
   %retval = alloca %Array*, align 8
   call void @__quantum__rt__capture_update_alias_count(%Callable* %action, i32 1)
@@ -1620,10 +1639,6 @@ entry:
   %1 = call i1 @__quantum__rt__result_equal(%Result* %input, %Result* %0)
   ret i1 %1
 }
-
-declare %Result* @__quantum__rt__result_get_one()
-
-declare i1 @__quantum__rt__result_equal(%Result*, %Result*)
 
 define internal void @SNIPPET__int2bool__body__wrapper(%Tuple* %capture-tuple, %Tuple* %arg-tuple, %Tuple* %result-tuple) {
 entry:
@@ -1734,21 +1749,6 @@ declare %Qubit* @__quantum__rt__qubit_allocate()
 declare %Array* @__quantum__rt__qubit_allocate_array(i64)
 
 declare void @__quantum__rt__qubit_release(%Qubit*)
-
-define internal %Result* @Microsoft__Quantum__Measurement__MResetZ__body(%Qubit* %target) {
-entry:
-  %result = call %Result* @Microsoft__Quantum__Intrinsic__M__body(%Qubit* %target)
-  %0 = call %Result* @__quantum__rt__result_get_one()
-  %1 = call i1 @__quantum__rt__result_equal(%Result* %result, %Result* %0)
-  br i1 %1, label %then0__1, label %continue__1
-
-then0__1:                                         ; preds = %entry
-  call void @__quantum__qis__x__body(%Qubit* %target)
-  br label %continue__1
-
-continue__1:                                      ; preds = %then0__1, %entry
-  ret %Result* %result
-}
 
 declare void @__quantum__rt__result_update_reference_count(%Result*, i32)
 

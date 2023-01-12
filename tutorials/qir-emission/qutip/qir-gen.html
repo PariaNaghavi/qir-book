@@ -597,25 +597,104 @@ title="Print to PDF"
 <h1>🚧 under construction 🚧<a class="headerlink" href="#under-construction" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not importing in docker nor my local env</span>
-<span class="c1">#from qutip.qip.qir import circuit_to_qir</span>
-<span class="kn">from</span> <span class="nn">qutip_qip.qir</span> <span class="kn">import</span> <span class="n">circuit_to_qir</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output/qutip_program.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">circuit_to_qir</span><span class="p">(</span><span class="n">teleportation</span><span class="o">.</span><span class="n">gates</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyqir</span>
+<span class="kn">from</span> <span class="nn">pyqir.generator</span> <span class="kn">import</span> <span class="n">BasicQisBuilder</span><span class="p">,</span> <span class="n">SimpleModule</span>
+<span class="kn">from</span> <span class="nn">qutip_qip_qir</span> <span class="kn">import</span> <span class="n">circuit_to_qir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;qutip_program.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">circuit_to_qir</span><span class="p">(</span><span class="n">teleportation</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># not importing in docker nor my local env</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#from qutip.qip.qir import circuit_to_qir</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">qutip_qip.qir</span> <span class="kn">import</span> <span class="n">circuit_to_qir</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output/qutip_program.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">circuit_to_qir</span><span class="p">(</span><span class="n">teleportation</span><span class="o">.</span><span class="n">gates</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">))</span> 
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;qutip_program.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">circuit_to_qir</span><span class="p">(</span><span class="n">teleportation</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">))</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;qutip_qip&#39;
+<span class="nn">File ~/work/qir-book/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:213,</span> in <span class="ni">circuit_to_qir</span><span class="nt">(circuit, format, module_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>         <span class="n">builder</span><span class="o">.</span><span class="n">mz</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>             <span class="n">module</span><span class="o">.</span><span class="n">qubits</span><span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>             <span class="n">module</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">classical_store</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">213</span>         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>             <span class="sa">f</span><span class="s2">&quot;Instruction </span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s2"> is not implemented in the QIR base &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>             <span class="o">+</span> <span class="s2">&quot;profile and may require a custom declaration.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="n">QirFormat</span><span class="o">.</span><span class="n">TEXT</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">ir</span><span class="p">()</span>
+
+<span class="ne">NotImplementedError</span>: Instruction Gate(SNOT, targets=[1], controls=None, classical controls=None, control_value=None) is not implemented in the QIR base profile and may require a custom declaration.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qutip_qip</span> 
+<span class="nb">dir</span><span class="p">(</span><span class="n">qutip_qip</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__path__&#39;,
+ &#39;__spec__&#39;,
+ &#39;__version__&#39;,
+ &#39;circuit&#39;,
+ &#39;circuit_latex&#39;,
+ &#39;operations&#39;,
+ &#39;version&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qutip_qip_qir</span> 
+<span class="nb">dir</span><span class="p">(</span><span class="n">qutip_qip_qir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Enum&#39;,
+ &#39;Gate&#39;,
+ &#39;Measurement&#39;,
+ &#39;NamedTemporaryFile&#39;,
+ &#39;QirFormat&#39;,
+ &#39;QubitCircuit&#39;,
+ &#39;TYPE_CHECKING&#39;,
+ &#39;Union&#39;,
+ &#39;__all__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;annotations&#39;,
+ &#39;auto&#39;,
+ &#39;b64decode&#39;,
+ &#39;circuit_to_qir&#39;,
+ &#39;mod&#39;,
+ &#39;os&#39;,
+ &#39;overload&#39;,
+ &#39;pqg&#39;]
 </pre></div>
 </div>
 </div>
