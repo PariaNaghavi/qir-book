@@ -603,6 +603,59 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pyqir</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pyqir.generator</span> <span class="kn">import</span> <span class="n">BasicQisBuilder</span><span class="p">,</span> <span class="n">SimpleModule</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">qutip_qip_qir</span> <span class="kn">import</span> <span class="n">circuit_to_qir</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyqir.generator&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qutip_qip_qir</span> <span class="kn">import</span> <span class="n">circuit_to_qir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qir_bitcode</span> <span class="o">=</span> <span class="n">circuit_to_qir</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;bitcode&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;circuit.bc&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">qir_bitcode</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">qir_bitcode</span> <span class="o">=</span> <span class="n">circuit_to_qir</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;bitcode&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;circuit.bc&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">qir_bitcode</span><span class="p">)</span>
+
+<span class="nn">File /workspaces/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:195,</span> in <span class="ni">circuit_to_qir</span><span class="nt">(circuit, format, module_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>             <span class="sa">f</span><span class="s2">&quot;Gate </span><span class="si">{</span><span class="n">op</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> not supported by the basic QIR builder, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>             <span class="o">+</span> <span class="s2">&quot;and may require a custom declaration.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="n">fmt</span> <span class="o">=</span> <span class="n">QirFormat</span><span class="o">.</span><span class="n">ensure</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">195</span> <span class="n">module</span> <span class="o">=</span> <span class="n">pqg</span><span class="o">.</span><span class="n">SimpleModule</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">N</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">num_cbits</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="n">builder</span> <span class="o">=</span> <span class="n">pqg</span><span class="o">.</span><span class="n">BasicQisBuilder</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">builder</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gates</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="c1"># If we have a QuTiP gate, then we need to convert it into one of</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="c1"># the reserved operation names in the QIR base profile&#39;s quantum</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="c1"># instruction set (QIS).</span>
+
+<span class="ne">AttributeError</span>: module &#39;qutip.qip.circuit&#39; has no attribute &#39;N&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,18 +671,18 @@ title="Print to PDF"
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;qutip_program.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">circuit_to_qir</span><span class="p">(</span><span class="n">teleportation</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">))</span>
 
-<span class="nn">File ~/work/qir-book/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:213,</span> in <span class="ni">circuit_to_qir</span><span class="nt">(circuit, format, module_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span>         <span class="n">builder</span><span class="o">.</span><span class="n">mz</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span>             <span class="n">module</span><span class="o">.</span><span class="n">qubits</span><span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>             <span class="n">module</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">classical_store</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">213</span>         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span>             <span class="sa">f</span><span class="s2">&quot;Instruction </span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s2"> is not implemented in the QIR base &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>             <span class="o">+</span> <span class="s2">&quot;profile and may require a custom declaration.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="n">QirFormat</span><span class="o">.</span><span class="n">TEXT</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">ir</span><span class="p">()</span>
+<span class="nn">File /workspaces/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:212,</span> in <span class="ni">circuit_to_qir</span><span class="nt">(circuit, format, module_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>         <span class="n">builder</span><span class="o">.</span><span class="n">mz</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>             <span class="n">module</span><span class="o">.</span><span class="n">qubits</span><span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>             <span class="n">module</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">classical_store</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">212</span>         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>             <span class="sa">f</span><span class="s2">&quot;Instruction </span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s2"> is not implemented in the QIR base &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>             <span class="o">+</span> <span class="s2">&quot;profile and may require a custom declaration.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="n">QirFormat</span><span class="o">.</span><span class="n">TEXT</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">ir</span><span class="p">()</span>
 
 <span class="ne">NotImplementedError</span>: Instruction Gate(SNOT, targets=[1], controls=None, classical controls=None, control_value=None) is not implemented in the QIR base profile and may require a custom declaration.
 </pre></div>
@@ -695,6 +748,105 @@ title="Print to PDF"
  &#39;os&#39;,
  &#39;overload&#39;,
  &#39;pqg&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyqir</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">pyqir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ArrayType&#39;,
+ &#39;Attribute&#39;,
+ &#39;AttributeList&#39;,
+ &#39;AttributeSet&#39;,
+ &#39;BasicBlock&#39;,
+ &#39;BasicQisBuilder&#39;,
+ &#39;Builder&#39;,
+ &#39;Call&#39;,
+ &#39;Constant&#39;,
+ &#39;Context&#39;,
+ &#39;FCmp&#39;,
+ &#39;FloatConstant&#39;,
+ &#39;FloatPredicate&#39;,
+ &#39;Function&#39;,
+ &#39;FunctionType&#39;,
+ &#39;ICmp&#39;,
+ &#39;Instruction&#39;,
+ &#39;IntConstant&#39;,
+ &#39;IntPredicate&#39;,
+ &#39;IntType&#39;,
+ &#39;Linkage&#39;,
+ &#39;Module&#39;,
+ &#39;Opcode&#39;,
+ &#39;Phi&#39;,
+ &#39;PointerType&#39;,
+ &#39;SimpleModule&#39;,
+ &#39;StructType&#39;,
+ &#39;Switch&#39;,
+ &#39;Type&#39;,
+ &#39;Value&#39;,
+ &#39;__all__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__path__&#39;,
+ &#39;__spec__&#39;,
+ &#39;_native&#39;,
+ &#39;_simple&#39;,
+ &#39;const&#39;,
+ &#39;entry_point&#39;,
+ &#39;extract_byte_string&#39;,
+ &#39;global_byte_string&#39;,
+ &#39;is_entry_point&#39;,
+ &#39;is_interop_friendly&#39;,
+ &#39;is_qubit_type&#39;,
+ &#39;is_result_type&#39;,
+ &#39;qubit&#39;,
+ &#39;qubit_id&#39;,
+ &#39;qubit_type&#39;,
+ &#39;required_num_qubits&#39;,
+ &#39;required_num_results&#39;,
+ &#39;result&#39;,
+ &#39;result_id&#39;,
+ &#39;result_type&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pyqir</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;pyqir&#39; from &#39;/opt/conda/envs/qir-book/lib/python3.9/site-packages/pyqir/__init__.py&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">pyqir</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span> <span class="p">(</span><span class="n">pyqir</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;pyqir&#39; has no attribute &#39;__version__&#39;
 </pre></div>
 </div>
 </div>

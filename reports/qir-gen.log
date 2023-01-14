@@ -17,29 +17,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-with open('qutip_program.ll', 'w') as file:
-    file.write(circuit_to_qir(teleportation, "text"))
+import pyqir
+from pyqir.generator import BasicQisBuilder, SimpleModule
+from qutip_qip_qir import circuit_to_qir
+
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNotImplementedError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[8], line 2[0m
-[1;32m      1[0m [38;5;28;01mwith[39;00m [38;5;28mopen[39m([38;5;124m'[39m[38;5;124mqutip_program.ll[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mw[39m[38;5;124m'[39m) [38;5;28;01mas[39;00m file:
-[0;32m----> 2[0m     file[38;5;241m.[39mwrite([43mcircuit_to_qir[49m[43m([49m[43mteleportation[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mtext[39;49m[38;5;124;43m"[39;49m[43m)[49m)
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[7], line 2[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyqir[39;00m
+[0;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyqir[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgenerator[39;00m [38;5;28;01mimport[39;00m BasicQisBuilder, SimpleModule
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqutip_qip_qir[39;00m [38;5;28;01mimport[39;00m circuit_to_qir
 
-File [0;32m~/work/qir-book/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:213[0m, in [0;36mcircuit_to_qir[0;34m(circuit, format, module_name)[0m
-[1;32m    207[0m         builder[38;5;241m.[39mmz(
-[1;32m    208[0m             module[38;5;241m.[39mqubits[op[38;5;241m.[39mtargets[[38;5;241m0[39m]],
-[1;32m    209[0m             module[38;5;241m.[39mresults[op[38;5;241m.[39mclassical_store],
-[1;32m    210[0m         )
-[1;32m    212[0m     [38;5;28;01melse[39;00m:
-[0;32m--> 213[0m         [38;5;28;01mraise[39;00m [38;5;167;01mNotImplementedError[39;00m(
-[1;32m    214[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mInstruction [39m[38;5;132;01m{[39;00mop[38;5;132;01m}[39;00m[38;5;124m is not implemented in the QIR base [39m[38;5;124m"[39m
-[1;32m    215[0m             [38;5;241m+[39m [38;5;124m"[39m[38;5;124mprofile and may require a custom declaration.[39m[38;5;124m"[39m
-[1;32m    216[0m         )
-[1;32m    218[0m [38;5;28;01mif[39;00m fmt [38;5;241m==[39m QirFormat[38;5;241m.[39mTEXT:
-[1;32m    219[0m     [38;5;28;01mreturn[39;00m module[38;5;241m.[39mir()
-
-[0;31mNotImplementedError[0m: Instruction Gate(SNOT, targets=[1], controls=None, classical controls=None, control_value=None) is not implemented in the QIR base profile and may require a custom declaration.
-NotImplementedError: Instruction Gate(SNOT, targets=[1], controls=None, classical controls=None, control_value=None) is not implemented in the QIR base profile and may require a custom declaration.
+[0;31mModuleNotFoundError[0m: No module named 'pyqir.generator'
+ModuleNotFoundError: No module named 'pyqir.generator'
 
