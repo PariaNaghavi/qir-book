@@ -423,12 +423,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Qiskit ➡️ QIR
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-visualize-qir">
+   To Visualize QIR
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#under-construction">
+   🚧 under construction 🚧
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -440,6 +474,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Qiskit ➡️ QIR
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-visualize-qir">
+   To Visualize QIR
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#under-construction">
+   🚧 under construction 🚧
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -454,18 +511,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumCircuit</span>
 <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">BasicAer</span><span class="p">,</span> <span class="n">Aer</span>
 <span class="kn">from</span> <span class="nn">qiskit_qir</span> <span class="kn">import</span> <span class="n">to_qir</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumCircuit</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">BasicAer</span><span class="p">,</span> <span class="n">Aer</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">qiskit_qir</span> <span class="kn">import</span> <span class="n">to_qir</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;qiskit&#39;
 </pre></div>
 </div>
 </div>
@@ -558,7 +603,147 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;; ModuleID = \&#39;teleport\&#39;\nsource_filename = &quot;teleport&quot;\n\n%Result = type opaque\n%Qubit = type opaque\n\ndeclare void @__quantum__rt__array_start_record_output()\n\ndeclare void @__quantum__rt__result_record_output(%Result*)\n\ndeclare void @__quantum__rt__array_end_record_output()\n\ndefine void @main() #0 {\nentry:\n  call void @__quantum__qis__reset__body(%Qubit* null)\n  call void @__quantum__qis__ry__body(double 0x400921FB54442D18, %Qubit* null)\n  call void @__quantum__qis__h__body(%Qubit* inttoptr (i64 1 to %Qubit*))\n  call void @__quantum__qis__cnot__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Qubit* inttoptr (i64 2 to %Qubit*))\n  call void @__quantum__qis__cnot__body(%Qubit* null, %Qubit* inttoptr (i64 1 to %Qubit*))\n  call void @__quantum__qis__h__body(%Qubit* null)\n  call void @__quantum__qis__mz__body(%Qubit* null, %Result* null)\n  call void @__quantum__qis__mz__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Result* inttoptr (i64 1 to %Result*))\n  %equal = call i1 @__quantum__qis__read_result__body(%Result* null)\n  br i1 %equal, label %then, label %else\n\nthen:                                             ; preds = %entry\n  call void @__quantum__qis__z__body(%Qubit* inttoptr (i64 2 to %Qubit*))\n  br label %continue\n\nelse:                                             ; preds = %entry\n  br label %continue\n\ncontinue:                                         ; preds = %else, %then\n  %equal1 = call i1 @__quantum__qis__read_result__body(%Result* inttoptr (i64 1 to %Result*))\n  br i1 %equal1, label %then2, label %else3\n\nthen2:                                            ; preds = %continue\n  call void @__quantum__qis__x__body(%Qubit* inttoptr (i64 2 to %Qubit*))\n  br label %continue4\n\nelse3:                                            ; preds = %continue\n  br label %continue4\n\ncontinue4:                                        ; preds = %else3, %then2\n  call void @__quantum__qis__mz__body(%Qubit* inttoptr (i64 2 to %Qubit*), %Result* inttoptr (i64 2 to %Result*))\n  call void @__quantum__rt__array_start_record_output()\n  call void @__quantum__rt__result_record_output(%Result* null)\n  call void @__quantum__rt__array_end_record_output()\n  call void @__quantum__rt__array_start_record_output()\n  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 1 to %Result*))\n  call void @__quantum__rt__array_end_record_output()\n  call void @__quantum__rt__array_start_record_output()\n  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 2 to %Result*))\n  call void @__quantum__rt__array_end_record_output()\n  ret void\n}\n\ndeclare void @__quantum__qis__reset__body(%Qubit*)\n\ndeclare void @__quantum__qis__ry__body(double, %Qubit*)\n\ndeclare void @__quantum__qis__h__body(%Qubit*)\n\ndeclare void @__quantum__qis__cnot__body(%Qubit*, %Qubit*)\n\ndeclare void @__quantum__qis__mz__body(%Qubit*, %Result*)\n\ndeclare i1 @__quantum__qis__read_result__body(%Result*)\n\ndeclare void @__quantum__qis__z__body(%Qubit*)\n\ndeclare void @__quantum__qis__x__body(%Qubit*)\n\nattributes #0 = { &quot;EntryPoint&quot; &quot;requiredQubits&quot;=&quot;3&quot; &quot;requiredResults&quot;=&quot;3&quot; }\n&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;; ModuleID = \&#39;teleport\&#39;\nsource_filename = &quot;teleport&quot;\n\n%Result = type opaque\n%Qubit = type opaque\n\ndeclare void @__quantum__rt__result_record_output(%Result*)\n\ndeclare void @__quantum__rt__array_start_record_output()\n\ndeclare void @__quantum__rt__array_end_record_output()\n\ndefine void @main() #0 {\nentry:\n  call void @__quantum__qis__reset__body(%Qubit* null)\n  call void @__quantum__qis__ry__body(double 0x400921FB54442D18, %Qubit* null)\n  call void @__quantum__qis__h__body(%Qubit* inttoptr (i64 1 to %Qubit*))\n  call void @__quantum__qis__cnot__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Qubit* inttoptr (i64 2 to %Qubit*))\n  call void @__quantum__qis__cnot__body(%Qubit* null, %Qubit* inttoptr (i64 1 to %Qubit*))\n  call void @__quantum__qis__h__body(%Qubit* null)\n  call void @__quantum__qis__mz__body(%Qubit* null, %Result* null)\n  call void @__quantum__qis__mz__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Result* inttoptr (i64 1 to %Result*))\n  %equal = call i1 @__quantum__qis__read_result__body(%Result* null)\n  br i1 %equal, label %then, label %else\n\nthen:                                             ; preds = %entry\n  call void @__quantum__qis__z__body(%Qubit* inttoptr (i64 2 to %Qubit*))\n  br label %continue\n\nelse:                                             ; preds = %entry\n  br label %continue\n\ncontinue:                                         ; preds = %else, %then\n  %equal1 = call i1 @__quantum__qis__read_result__body(%Result* inttoptr (i64 1 to %Result*))\n  br i1 %equal1, label %then2, label %else3\n\nthen2:                                            ; preds = %continue\n  call void @__quantum__qis__x__body(%Qubit* inttoptr (i64 2 to %Qubit*))\n  br label %continue4\n\nelse3:                                            ; preds = %continue\n  br label %continue4\n\ncontinue4:                                        ; preds = %else3, %then2\n  call void @__quantum__qis__mz__body(%Qubit* inttoptr (i64 2 to %Qubit*), %Result* inttoptr (i64 2 to %Result*))\n  call void @__quantum__rt__array_start_record_output()\n  call void @__quantum__rt__result_record_output(%Result* null)\n  call void @__quantum__rt__array_end_record_output()\n  call void @__quantum__rt__array_start_record_output()\n  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 1 to %Result*))\n  call void @__quantum__rt__array_end_record_output()\n  call void @__quantum__rt__array_start_record_output()\n  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 2 to %Result*))\n  call void @__quantum__rt__array_end_record_output()\n  ret void\n}\n\ndeclare void @__quantum__qis__reset__body(%Qubit*)\n\ndeclare void @__quantum__qis__ry__body(double, %Qubit*)\n\ndeclare void @__quantum__qis__h__body(%Qubit*)\n\ndeclare void @__quantum__qis__cnot__body(%Qubit*, %Qubit*)\n\ndeclare void @__quantum__qis__mz__body(%Qubit*, %Result*)\n\ndeclare i1 @__quantum__qis__read_result__body(%Result*)\n\ndeclare void @__quantum__qis__z__body(%Qubit*)\n\ndeclare void @__quantum__qis__x__body(%Qubit*)\n\nattributes #0 = { &quot;EntryPoint&quot; &quot;requiredQubits&quot;=&quot;3&quot; &quot;requiredResults&quot;=&quot;3&quot; }\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;teleport_qiskit.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">qir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="to-visualize-qir">
+<h1>To Visualize QIR<a class="headerlink" href="#to-visualize-qir" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>opt<span class="w"> </span>-dot-cfg<span class="w"> </span>-S<span class="w"> </span>teleport_qiskit.ll<span class="w"> </span>-f
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing &#39;.main.dot&#39;...
+; ModuleID = &#39;teleport_qiskit.ll&#39;
+source_filename = &quot;teleport&quot;
+
+%Result = type opaque
+%Qubit = type opaque
+
+declare void @__quantum__rt__result_record_output(%Result*)
+
+declare void @__quantum__rt__array_start_record_output()
+
+declare void @__quantum__rt__array_end_record_output()
+
+define void @main() #0 {
+entry:
+  call void @__quantum__qis__reset__body(%Qubit* null)
+  call void @__quantum__qis__ry__body(double 0x400921FB54442D18, %Qubit* null)
+  call void @__quantum__qis__h__body(%Qubit* inttoptr (i64 1 to %Qubit*))
+  call void @__quantum__qis__cnot__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Qubit* inttoptr (i64 2 to %Qubit*))
+  call void @__quantum__qis__cnot__body(%Qubit* null, %Qubit* inttoptr (i64 1 to %Qubit*))
+  call void @__quantum__qis__h__body(%Qubit* null)
+  call void @__quantum__qis__mz__body(%Qubit* null, %Result* null)
+  call void @__quantum__qis__mz__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Result* inttoptr (i64 1 to %Result*))
+  %equal = call i1 @__quantum__qis__read_result__body(%Result* null)
+  br i1 %equal, label %then, label %else
+
+then:                                             ; preds = %entry
+  call void @__quantum__qis__z__body(%Qubit* inttoptr (i64 2 to %Qubit*))
+  br label %continue
+
+else:                                             ; preds = %entry
+  br label %continue
+
+continue:                                         ; preds = %else, %then
+  %equal1 = call i1 @__quantum__qis__read_result__body(%Result* inttoptr (i64 1 to %Result*))
+  br i1 %equal1, label %then2, label %else3
+
+then2:                                            ; preds = %continue
+  call void @__quantum__qis__x__body(%Qubit* inttoptr (i64 2 to %Qubit*))
+  br label %continue4
+
+else3:                                            ; preds = %continue
+  br label %continue4
+
+continue4:                                        ; preds = %else3, %then2
+  call void @__quantum__qis__mz__body(%Qubit* inttoptr (i64 2 to %Qubit*), %Result* inttoptr (i64 2 to %Result*))
+  call void @__quantum__rt__array_start_record_output()
+  call void @__quantum__rt__result_record_output(%Result* null)
+  call void @__quantum__rt__array_end_record_output()
+  call void @__quantum__rt__array_start_record_output()
+  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 1 to %Result*))
+  call void @__quantum__rt__array_end_record_output()
+  call void @__quantum__rt__array_start_record_output()
+  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 2 to %Result*))
+  call void @__quantum__rt__array_end_record_output()
+  ret void
+}
+
+declare void @__quantum__qis__reset__body(%Qubit*)
+
+declare void @__quantum__qis__ry__body(double, %Qubit*)
+
+declare void @__quantum__qis__h__body(%Qubit*)
+
+declare void @__quantum__qis__cnot__body(%Qubit*, %Qubit*)
+
+declare void @__quantum__qis__mz__body(%Qubit*, %Result*)
+
+declare i1 @__quantum__qis__read_result__body(%Result*)
+
+declare void @__quantum__qis__z__body(%Qubit*)
+
+declare void @__quantum__qis__x__body(%Qubit*)
+
+attributes #0 = { &quot;EntryPoint&quot; &quot;requiredQubits&quot;=&quot;3&quot; &quot;requiredResults&quot;=&quot;3&quot; }
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>dot<span class="w"> </span>-Tpng<span class="w"> </span>.main.dot<span class="w"> </span>-o<span class="w"> </span>teleport_qiskit.png
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;teleport_qiskit.png&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/qir-gen_12_0.png" src="../../../_images/qir-gen_12_0.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="under-construction">
+<h1>🚧 under construction 🚧<a class="headerlink" href="#under-construction" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">graphviz</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;.main.dot&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Digraph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;teleport_qiskit.gv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;teleport_qiskit.gv.pdf&#39;
 </pre></div>
 </div>
 </div>

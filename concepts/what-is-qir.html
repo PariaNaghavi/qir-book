@@ -394,36 +394,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qir-specification">
-   QIR Specification
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -435,19 +411,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qir-specification">
-   QIR Specification
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -458,22 +421,12 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="what-is-qir">
 <h1>What is QIR?<a class="headerlink" href="#what-is-qir" title="Permalink to this headline">#</a></h1>
 <p>The QIR ecosystem collectively creates a compiler system with the goal of interoperability for hybrid computation. Let’s consider a simple model of compilers consists of front-end, middle end and back-end abstraction layers. Together, they complete the goal of a compiler to transform source code into target-machine code. The front-end parses the sources code into abstract syntax tree and emits Intermediate Representation (IR) for the middle abstraction layer of the compiler. Transformations, analyses, and optimizations are performed on IRs before the back end generates the machine code.</p>
-<p>Modern compilers take advantage of introducing new layers of abstraction in the middle end, dissolving traditional compiler phases. This new approach allows for Multiple Level Intermediate Representation (MLIR) compiler systems. Tools and components that lower the instruction with MLIR approach can be reused for different source languages and target machines. It was initially <a class="reference external" href="https://arxiv.org/pdf/2101.11365.pdf">introduced</a> for in machine learning workflows to facilitate compilation for co-processing. MLIR spans the abstraction levels from after source code to machine code generation, creating a space for compiler extensibility and reusability with different high-level languages and low-level targets.</p>
-<p>LLVM is consisted of libraries that support building compilers and compilation processes. It unifies different high-level languages into a common IR. Its modular design <a class="reference external" href="https://arxiv.org/pdf/2101.11365.pdf">allows</a> for implementation of MLIR, using Static Single Assignment (SSA)-based IR data structures. The LLVM technologies have been used widely in classical compilation developments, because it creates a common IR at the end of the front-end phase, regardless of source language. Hence, functionalities developed in LLVM are shared easily for different source languages, target machines, analyses, and transformations. This cross language and hardware interoperability was needed in the current state of quantum computing field, so computational tools could be shared and reused.</p>
+<p>Modern compilers take advantage of introducing new layers of abstraction in the middle end, dissolving traditional compiler phases. This new approach allows for Multiple Level Intermediate Representation (MLIR) compiler systems. Tools and components that lower the instruction with MLIR approach can be reused for different source languages and target machines. It was initially <a class="reference external" href="https://arxiv.org/pdf/2101.11365.pdf">introduced</a> for in machine learning workflows to facilitate compilation for co-processing. MLIR spans the abstraction levels from after source code to machine code generation, creating a space for compiler extensibility and reusability with different high-level code and low-level targets.</p>
+<p>LLVM is consisted of libraries that support building compilers and compilation processes. It unifies different high-level code into a common IR. Its modular design <a class="reference external" href="https://arxiv.org/pdf/2101.11365.pdf">allows</a> for implementation of MLIR, using Static Single Assignment (SSA)-based IR data structures. The LLVM technologies have been used widely in classical compilation developments, because it creates a common IR at the end of the front-end phase, regardless of variation source frameworks. Hence, functionalities developed in LLVM are shared easily cross stacks. As interoperability is a need in the current state of quantum computing field, so are computational tools that allow sharing and reusing tools.</p>
 <p>Quantum Intermediate Representation (QIR) was designed and developed with the same interoperability objectives as LLVM. In fact, QIR is in LLVM.</p>
-<section id="qir-specification">
-<h2>QIR Specification<a class="headerlink" href="#qir-specification" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Formalization of Quantum Operation</p>
-<ul>
-<li><p>QIR is embedded in LLVM IR</p></li>
-</ul>
-</li>
-<li><p>Type Abstraction and Formalization</p></li>
-<li><p>Function call = operations on opaque data types</p></li>
-<li><p>Entry point functions</p></li>
-</ul>
-</section>
+<!---  QIR Specification
+- Function call = operations on opaque data types
+- Entry point functions  --->
 </section>
 
     <script type="text/x-thebe-config">
