@@ -17,32 +17,37 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-
-qir_bitcode = circuit_to_qir(circuit, format="bitcode")
-with open('circuit.bc', 'wb') as f:
-    f.write(qir_bitcode)
+with open('qutip_program.ll', 'w') as file:
+    file.write(circuit_to_qir(teleportation, "text"))
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [0;32mIn[10], line 1[0m
-[0;32m----> 1[0m qir_bitcode [38;5;241m=[39m [43mcircuit_to_qir[49m[43m([49m[43mcircuit[49m[43m,[49m[43m [49m[38;5;28;43mformat[39;49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mbitcode[39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m      2[0m [38;5;28;01mwith[39;00m [38;5;28mopen[39m([38;5;124m'[39m[38;5;124mcircuit.bc[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mwb[39m[38;5;124m'[39m) [38;5;28;01mas[39;00m f:
-[1;32m      3[0m     f[38;5;241m.[39mwrite(qir_bitcode)
+Cell [0;32mIn[8], line 2[0m
+[1;32m      1[0m [38;5;28;01mwith[39;00m [38;5;28mopen[39m([38;5;124m'[39m[38;5;124mqutip_program.ll[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mw[39m[38;5;124m'[39m) [38;5;28;01mas[39;00m file:
+[0;32m----> 2[0m     file[38;5;241m.[39mwrite([43mcircuit_to_qir[49m[43m([49m[43mteleportation[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mtext[39;49m[38;5;124;43m"[39;49m[43m)[49m)
 
-File [0;32m~/work/qir-book/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:195[0m, in [0;36mcircuit_to_qir[0;34m(circuit, format, module_name)[0m
-[1;32m    188[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m    189[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mGate [39m[38;5;132;01m{[39;00mop[38;5;241m.[39mname[38;5;132;01m}[39;00m[38;5;124m not supported by the basic QIR builder, [39m[38;5;124m"[39m
-[1;32m    190[0m             [38;5;241m+[39m [38;5;124m"[39m[38;5;124mand may require a custom declaration.[39m[38;5;124m"[39m
-[1;32m    191[0m         )
-[1;32m    193[0m fmt [38;5;241m=[39m QirFormat[38;5;241m.[39mensure([38;5;28mformat[39m)
-[0;32m--> 195[0m module [38;5;241m=[39m pqg[38;5;241m.[39mSimpleModule(module_name, [43mcircuit[49m[38;5;241;43m.[39;49m[43mN[49m, circuit[38;5;241m.[39mnum_cbits [38;5;129;01mor[39;00m [38;5;241m0[39m)
-[1;32m    196[0m builder [38;5;241m=[39m pqg[38;5;241m.[39mBasicQisBuilder(module[38;5;241m.[39mbuilder)
-[1;32m    198[0m [38;5;28;01mfor[39;00m op [38;5;129;01min[39;00m circuit[38;5;241m.[39mgates:
-[1;32m    199[0m     [38;5;66;03m# If we have a QuTiP gate, then we need to convert it into one of[39;00m
-[1;32m    200[0m     [38;5;66;03m# the reserved operation names in the QIR base profile's quantum[39;00m
-[1;32m    201[0m     [38;5;66;03m# instruction set (QIS).[39;00m
+File [0;32m~/work/qir-book/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:198[0m, in [0;36mcircuit_to_qir[0;34m(circuit, format, module_name)[0m
+[1;32m    192[0m [38;5;28;01mfor[39;00m op [38;5;129;01min[39;00m circuit[38;5;241m.[39mgates:
+[1;32m    193[0m     [38;5;66;03m# If we have a QuTiP gate, then we need to convert it into one of[39;00m
+[1;32m    194[0m     [38;5;66;03m# the reserved operation names in the QIR base profile's quantum[39;00m
+[1;32m    195[0m     [38;5;66;03m# instruction set (QIS).[39;00m
+[1;32m    196[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(op, Gate):
+[1;32m    197[0m         [38;5;66;03m# TODO: Validate indices.[39;00m
+[0;32m--> 198[0m         [43mappend_operation[49m[43m([49m[43mmodule[49m[43m,[49m[43m [49m[43mbuilder[49m[43m,[49m[43m [49m[43mop[49m[43m)[49m
+[1;32m    200[0m     [38;5;28;01melif[39;00m [38;5;28misinstance[39m(op, Measurement):
+[1;32m    201[0m         builder[38;5;241m.[39mmz(
+[1;32m    202[0m             module[38;5;241m.[39mqubits[op[38;5;241m.[39mtargets[[38;5;241m0[39m]],
+[1;32m    203[0m             module[38;5;241m.[39mresults[op[38;5;241m.[39mclassical_store],
+[1;32m    204[0m         )
 
-[0;31mAttributeError[0m: module 'qutip.qip.circuit' has no attribute 'N'
-AttributeError: module 'qutip.qip.circuit' has no attribute 'N'
+File [0;32m~/work/qir-book/qir-book/qir-book/tutorials/qir-emission/qutip/qutip_qip_qir.py:119[0m, in [0;36mcircuit_to_qir.<locals>.append_operation[0;34m(module, builder, op)[0m
+[1;32m    117[0m [38;5;28;01mif[39;00m op[38;5;241m.[39mclassical_controls:
+[1;32m    118[0m     result [38;5;241m=[39m op[38;5;241m.[39mclassical_controls[[38;5;241m0[39m]
+[0;32m--> 119[0m     value [38;5;241m=[39m [38;5;124m"[39m[38;5;124mzero[39m[38;5;124m"[39m [38;5;28;01mif[39;00m [43mop[49m[38;5;241;43m.[39;49m[43mclassical_control_value[49m [38;5;241m==[39m [38;5;241m0[39m [38;5;28;01melse[39;00m [38;5;124m"[39m[38;5;124mone[39m[38;5;124m"[39m
+[1;32m    120[0m     [38;5;66;03m# Pull off the first control and recurse.[39;00m
+[1;32m    121[0m     op_with_less_controls [38;5;241m=[39m Gate([38;5;241m*[39m[38;5;241m*[39mop[38;5;241m.[39m[38;5;18m__dict__[39m)
+
+[0;31mAttributeError[0m: 'Gate' object has no attribute 'classical_control_value'
+AttributeError: 'Gate' object has no attribute 'classical_control_value'
 
