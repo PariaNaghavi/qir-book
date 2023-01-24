@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Glossary" href="../reference/glossary.html" />
+    <link rel="prev" title="How do we use it?" href="using-qir.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -160,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
   Concepts
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="what-is-qir.html">
    What is QIR?
@@ -174,6 +176,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="using-qir.html">
    How do we use it?
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Hybrid in QIR
   </a>
  </li>
  <li class="toctree-l1">
@@ -392,12 +399,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#llvm">
+   LLVM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compilers">
+   Compilers:
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -409,6 +445,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#llvm">
+   LLVM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compilers">
+   Compilers:
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -424,10 +478,46 @@ title="Print to PDF"
 <p><img alt="alt text" src="qir-book/tutorials/qir-emission/qiskit/teleport_qiskit.png" /></p>
 <ul class="simple">
 <li><p>Post measurement conditional in teleportation as an example</p></li>
-<li><p>compare QIR viz</p></li>
-<li><p>profiles and passes</p></li>
-<li><p>generic QIR</p></li>
 </ul>
+<section id="llvm">
+<h2>LLVM<a class="headerlink" href="#llvm" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>LLVM is a collection of modular and reusable compiler and toolchain technologies for developing and optimizing various programming languages</p></li>
+<li><p>It is open-source and maintained by a  community of contributors</p></li>
+<li><p>IR allows for easy analysis and manipulation of code, making it a popular choice for many programming languages, compilers, and other tools.</p></li>
+<li><p>libraries and tools for visualizing, debugging, and profiling of code</p></li>
+<li><p>Blocks:  linear sequences of instructions with a single-entry point and a single exit point.</p>
+<ul>
+<li><p>to show the control flow: to analyze and optimize the code</p></li>
+<li><p>CFG</p></li>
+</ul>
+</li>
+<li><p>code profiling:</p>
+<ul>
+<li><p>CPU profiling vs. memory profiling (is it relevant?)</p></li>
+</ul>
+</li>
+<li><p>back ends include register allocation and scheduling</p></li>
+<li><p>In LLVM, registers are used as temporary storage locations for values</p>
+<ul>
+<li><p>register allocator and register bank: assign values to physical registers of a target architecture during the code generation process</p></li>
+</ul>
+</li>
+<li><p>Block Separation: QPU, CPU and between</p>
+<ul>
+<li><p><strong>quantum__rt</strong> and <strong>quantum__qis</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="compilers">
+<h2>Compilers:<a class="headerlink" href="#compilers" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>JIT compiles code at runtime, allowing for optimization</p></li>
+<li><p>AOT compiles code before runtime, can’t detect bugs until the</p></li>
+<li><p>Advantages of modularity of QIR: shared passes: optimization and analysis. What else?</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -457,6 +547,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="using-qir.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">How do we use it?</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../reference/glossary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Glossary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
