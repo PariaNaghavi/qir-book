@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="QIR Ecosystem projects" href="../project-gallery.html" />
-    <link rel="prev" title="Hybrid in QIR" href="../concepts/hybrid-qir.html" />
+    <link rel="prev" title="Why QIR Is in LLVM?" href="../concepts/why-LLVM.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,13 +105,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tutorials
+  Ecosystem
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ecosystem/eco.html">
+   Overview
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../tutorials/qir-emission.html">
-   QIR Generation
+  <a class="reference internal" href="../ecosystem/specs/specs.html">
+   QIR Specifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -120,37 +125,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/qsharp/in_jupyter/qsharp-magic.html">
-     Q# ➡️ QIR
+    <a class="reference internal" href="../ecosystem/specs/data-types.html">
+     Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/qutip/qir-gen.html">
-     QuTip ➡️ QIR 🚧
+    <a class="reference internal" href="../ecosystem/specs/profile-target.html">
+     Profiles and Code Generation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/qiskit/qir-gen.html">
-     Qiskit ➡️ QIR
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/pennylane/qir-gen.html">
-     PennyLane ➡️ QIR 🚧
+    <a class="reference internal" href="../ecosystem/specs/runtime.html">
+     Runtime
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/qat-optimization.html">
-   Optimizing QIR with
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     qat
-    </span>
-   </code>
+  <a class="reference internal" href="../ecosystem/pyqir/pyqir.html">
+   PyQIR
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/visualize-qir.html">
    Visualize QIR programs
@@ -174,13 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../concepts/using-qir.html">
-   How do we use it?
+  <a class="reference internal" href="../concepts/MLIR.html">
+   MLIR for QIR
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../concepts/hybrid-qir.html">
-   Hybrid in QIR
+  <a class="reference internal" href="../concepts/why-LLVM.html">
+   Why QIR Is in LLVM?
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -399,12 +401,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intermediate-representation-ir">
+   Intermediate Representation (IR)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-block">
+   Code Block
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -416,6 +447,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intermediate-representation-ir">
+   Intermediate Representation (IR)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-block">
+   Code Block
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -425,16 +474,21 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="glossary">
 <h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">#</a></h1>
-<dl class="glossary simple">
-<dt id="term-Intermediate-Representation-IR">Intermediate Representation (IR)<a class="headerlink" href="#term-Intermediate-Representation-IR" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term 1</p>
-</dd>
-<dt id="term-Hybrid-Programs">Hybrid Programs<a class="headerlink" href="#term-Hybrid-Programs" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term2</p>
-</dd>
-<dt id="term-Interoperability">Interoperability<a class="headerlink" href="#term-Interoperability" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term3</p>
-</dd>
-<dt id="term-LLVM">LLVM<a class="headerlink" href="#term-LLVM" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term4</p>
-</dd>
-</dl>
+<section id="intermediate-representation-ir">
+<h2>Intermediate Representation (IR)<a class="headerlink" href="#intermediate-representation-ir" title="Permalink to this headline">#</a></h2>
+<p>It serves as an intermediate step between the high-level source code and the machine code or executable output. The IR abstraction opens up the possibility of analysis, optimization and code generation, an abstraction level away from execution. <span class="xref myst">LLVM</span> IR is the form used to represent code in the QIR compiler projects such as QAT.</p>
+</section>
+<section id="code-block">
+<h2>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">#</a></h2>
+<p>Blocks are linear sequences of instructions in a program, distinguished by having a sole entry point and exit point. Blocks are utilized for analyzing and optimizing code, as they provide a structured representation of program of the order in which instructions or statements are executed. Blocks are also used to represent control flow graphs (CFGs).
+Hybrid Programs
+An indented explanation of term2</p>
+<p>Interoperability
+An indented explanation of term3</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -464,11 +518,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../concepts/hybrid-qir.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../concepts/why-LLVM.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Hybrid in QIR</p>
+            <p class="prev-next-title">Why QIR Is in LLVM?</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../project-gallery.html" title="next page">

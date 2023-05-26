@@ -104,13 +104,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tutorials
+  Ecosystem
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ecosystem/eco.html">
+   Overview
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="tutorials/qir-emission.html">
-   QIR Generation
+  <a class="reference internal" href="ecosystem/specs/specs.html">
+   QIR Specifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -119,37 +124,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/qir-emission/qsharp/in_jupyter/qsharp-magic.html">
-     Q# ➡️ QIR
+    <a class="reference internal" href="ecosystem/specs/data-types.html">
+     Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/qir-emission/qutip/qir-gen.html">
-     QuTip ➡️ QIR 🚧
+    <a class="reference internal" href="ecosystem/specs/profile-target.html">
+     Profiles and Code Generation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/qir-emission/qiskit/qir-gen.html">
-     Qiskit ➡️ QIR
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/qir-emission/pennylane/qir-gen.html">
-     PennyLane ➡️ QIR 🚧
+    <a class="reference internal" href="ecosystem/specs/runtime.html">
+     Runtime
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/qat-optimization.html">
-   Optimizing QIR with
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     qat
-    </span>
-   </code>
+  <a class="reference internal" href="ecosystem/pyqir/pyqir.html">
+   PyQIR
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="tutorials/visualize-qir.html">
    Visualize QIR programs
@@ -173,13 +175,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="concepts/using-qir.html">
-   How do we use it?
+  <a class="reference internal" href="concepts/MLIR.html">
+   MLIR for QIR
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="concepts/hybrid-qir.html">
-   Hybrid in QIR
+  <a class="reference internal" href="concepts/why-LLVM.html">
+   Why QIR Is in LLVM?
   </a>
  </li>
  <li class="toctree-l1">
@@ -425,17 +427,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="cite-qir-book">
 <h1>Cite QIR Book<a class="headerlink" href="#cite-qir-book" title="Permalink to this headline">#</a></h1>
 <p>QIR Book is developed by many people across academia and industry.</p>
-<div class="docutils container" id="id1">
-<dl class="citation">
-<dt class="label" id="id9"><span class="brackets">MNS+21</span></dt>
-<dd><p>Alexander Mccaskey, Thien Nguyen, Anthony Santana, Daniel Claudino, Tyler Kharazi, and Hal Finkel. Extending c++ for heterogeneous quantum-classical computing. <em>ACM Transactions on Quantum Computing</em>, 2(2):1–36, 2021.</p>
-</dd>
-<dt class="label" id="id7"><span class="brackets">NM21</span></dt>
-<dd><p>Thien Nguyen and Alexander McCaskey. Enabling retargetable optimizing compilers for quantum accelerators via a multi-level intermediate representation. <em>arXiv preprint arXiv:2109.00506</em>, 2021.</p>
-</dd>
-</dl>
-</div>
-</section>
+<span class="target" id="id1"></span></section>
 
     <script type="text/x-thebe-config">
     {

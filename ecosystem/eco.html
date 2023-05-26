@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How do we use it?</title>
+    <title>Overview</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hybrid in QIR" href="hybrid-qir.html" />
-    <link rel="prev" title="Why do we need it?" href="why-do-we-need.html" />
+    <link rel="next" title="QIR Specifications" href="specs/specs.html" />
+    <link rel="prev" title="Community Documentation" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,13 +105,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tutorials
+  Ecosystem
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Overview
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../tutorials/qir-emission.html">
-   QIR Generation
+  <a class="reference internal" href="specs/specs.html">
+   QIR Specifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -120,37 +125,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/qsharp/in_jupyter/qsharp-magic.html">
-     Q# ➡️ QIR
+    <a class="reference internal" href="specs/data-types.html">
+     Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/qutip/qir-gen.html">
-     QuTip ➡️ QIR 🚧
+    <a class="reference internal" href="specs/profile-target.html">
+     Profiles and Code Generation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/qiskit/qir-gen.html">
-     Qiskit ➡️ QIR
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/qir-emission/pennylane/qir-gen.html">
-     PennyLane ➡️ QIR 🚧
+    <a class="reference internal" href="specs/runtime.html">
+     Runtime
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/qat-optimization.html">
-   Optimizing QIR with
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     qat
-    </span>
-   </code>
+  <a class="reference internal" href="pyqir/pyqir.html">
+   PyQIR
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/visualize-qir.html">
    Visualize QIR programs
@@ -162,25 +164,25 @@ const thebe_selector_output = ".output, .cell_output"
   Concepts
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="what-is-qir.html">
+  <a class="reference internal" href="../concepts/what-is-qir.html">
    What is QIR?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="why-do-we-need.html">
+  <a class="reference internal" href="../concepts/why-do-we-need.html">
    Why do we need it?
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   How do we use it?
+ <li class="toctree-l1">
+  <a class="reference internal" href="../concepts/MLIR.html">
+   MLIR for QIR
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="hybrid-qir.html">
-   Hybrid in QIR
+  <a class="reference internal" href="../concepts/why-LLVM.html">
+   Why QIR Is in LLVM?
   </a>
  </li>
  <li class="toctree-l1">
@@ -317,7 +319,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/qir-alliance/qir-book/issues/new?title=Issue%20on%20page%20%2Fconcepts/using-qir.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/qir-alliance/qir-book/issues/new?title=Issue%20on%20page%20%2Fecosystem/eco.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -334,7 +336,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/qir-alliance/qir-book/edit/main/qir-book/concepts/using-qir.md"
+        <a href="https://github.com/qir-alliance/qir-book/edit/main/qir-book/ecosystem/eco.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -362,7 +364,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/concepts/using-qir.md"
+        <a href="../_sources/ecosystem/eco.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -399,130 +401,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#applications">
-   Applications
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#infrastructure">
-   Infrastructure
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pyqir">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pyqir
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#qcor">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       qcor
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulation">
-   Simulation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hardware">
-   Hardware
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>How do we use it?</h1>
+                <h1>Overview</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#applications">
-   Applications
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#infrastructure">
-   Infrastructure
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pyqir">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pyqir
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#qcor">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       qcor
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulation">
-   Simulation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hardware">
-   Hardware
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -530,45 +425,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="how-do-we-use-it">
-<h1>How do we use it?<a class="headerlink" href="#how-do-we-use-it" title="Permalink to this headline">#</a></h1>
-<p><img alt="qirecosys-overview" src="../_images/qirecosys.png" /></p>
-<section id="applications">
-<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Ideally you don’t directly interact with QIR :)</p></li>
-<li><p>Resource optimization passes with <code class="docutils literal notranslate"><span class="pre">qat</span></code></p></li>
-</ul>
-</section>
-<section id="infrastructure">
-<h2>Infrastructure<a class="headerlink" href="#infrastructure" title="Permalink to this headline">#</a></h2>
-<section id="pyqir">
-<h3><code class="docutils literal notranslate"><span class="pre">pyqir</span></code><a class="headerlink" href="#pyqir" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Emission, Execution, and analysis (py-based PL)= pyqir</p></li>
-<li><p>PyQIR matches the code to the defined profiles in QIR and generates .ll</p></li>
-<li><p>analysis: resource estimation?</p></li>
-<li><p>includes/skip the steps for QIR spec and qcor, for py-based languages</p></li>
-<li><p>where LLVM dialect meets/compiles the higher-level instruction to executables</p></li>
-</ul>
-</section>
-<section id="qcor">
-<h3><code class="docutils literal notranslate"><span class="pre">qcor</span></code><a class="headerlink" href="#qcor" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Movements between abstraction levels (XACC and MLIR dialect) <span id="id1">[<a class="reference internal" href="../cite.html#id7" title="Thien Nguyen and Alexander McCaskey. Enabling retargetable optimizing compilers for quantum accelerators via a multi-level intermediate representation. arXiv preprint arXiv:2109.00506, 2021.">NM21</a>]</span></p></li>
-<li><p>MLIR –&gt; quantum instructions = stand-alone DSL <span id="id2">[<a class="reference internal" href="../cite.html#id9" title="Alexander Mccaskey, Thien Nguyen, Anthony Santana, Daniel Claudino, Tyler Kharazi, and Hal Finkel. Extending c++ for heterogeneous quantum-classical computing. ACM Transactions on Quantum Computing, 2(2):1–36, 2021.">MNS+21</a>]</span></p></li>
-</ul>
-</section>
-</section>
-<section id="simulation">
-<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="hardware">
-<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>profiles for different hardware platforms</p></li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+<p>The QIR ecosystem comprises multiple projects that collaborate to generate QIR, perform optimizations, lower it to target code, and facilitate simulations.<span class="xref myst">QIR specifications</span> encompass a set of data type, subroutines, and runtime functionalities for acceptable compiled code from the source compiler. A subset of these specifications is used to define a profile for target machine, either quantum devices or simulators. If the source code is developed in a Pythonic framework, then <span class="xref myst">PyQIR</span> APIs can be used to build the capabilities to lower the source code to QIR. Other development frameworks such as Q# have incorporated the intrinsic functionality to generate QIR. The figure below shows the components of the QIR ecosystem.</p>
+<p><img alt="alt text" src="../_images/eco-component.png" /></p>
+<p>To add:
+QAT-
+QCOR-
+QIR Runner-
+NWQ-Sim-</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -584,7 +449,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./concepts"
+            path: "./ecosystem"
         },
         predefinedOutput: true
     }
@@ -598,17 +463,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="why-do-we-need.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Why do we need it?</p>
+            <p class="prev-next-title">Community Documentation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="hybrid-qir.html" title="next page">
+    <a class='right-next' id="next-link" href="specs/specs.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hybrid in QIR</p>
+        <p class="prev-next-title">QIR Specifications</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
